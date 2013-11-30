@@ -64,7 +64,7 @@ int main()
 
     if (loopw == 2) goto regenerateMap;
 
-        return 0;
+    return 0;
 }
 
 
