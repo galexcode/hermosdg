@@ -1,0 +1,60 @@
+~version 0.0.1 alpha
+///
+    added render function
+    added generation function
+    added path generation function
+    added event handler
+    added collision
+
+    patch 0.0.2 alpha:
+    fixed render function
+    fixed generation function
+    path generation to be fixed - !!!!!!!!!!!!!!!!
+
+    patch 0.0.2b alpha:
+    fixed render function
+
+    patch .3a b c alpha:
+    fixed generation function
+
+---
+
+~version 0.1.0 alpha
+///
+    added UI
+    added doors and keys
+    added player - doors/ keys interaction logic
+    fixed bugs
+
+---
+
+~version 0.1.0 alpha
+///
+    added import support for custom maps ("custom")
+    added enemies
+    edded enemies AI (unfunct)
+
+    patch 0.1.1a alpha:
+    fixed import maps function
+    added import enemies and doors support
+---
+
+~version 0.1.2 alpha
+///
+    added points and points score logic
+    added player - points interaction logic
+    fixed bugs
+
+---
+
+~version 0.1.3 alpha
+///
+    added smoothMap function
+
+---
+
+TODO:
+fix door/ key bugs (not appearing in pair everytime)
+tweak points generation
+
+

@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1385824931 source:e:\cpp_proj\labirint_dinnou\main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+	"definitions.h"
+	"generator.h"
+	"screen.h"
+	"playeraction.h"
+	"load.h"
+	"enemy.h"
+
+1385824109 e:\cpp_proj\labirint_dinnou\definitions.h
+
+1385824931 e:\cpp_proj\labirint_dinnou\generator.h
+	"definitions.h"
+
+1385816935 e:\cpp_proj\labirint_dinnou\screen.h
+	<iostream>
+	"definitions.h"
+
+1385825011 e:\cpp_proj\labirint_dinnou\playeraction.h
+	"definitions.h"
+	<windows.h>
+
+1385755563 e:\cpp_proj\labirint_dinnou\main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+	"definitions.h"
+	"generator.h"
+	"screen.h"
+	"playeraction.h"
+
+1385824626 e:\cpp_proj\labirint_dinnou\load.h
+	"definitions.h"
+	<fstream>
+	<stdlib.h>
+	<time.h>
+
+1385814490 e:\cpp_proj\labirint_dinnou\enemy.h
+	"definitions.h"
+
