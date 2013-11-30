@@ -11,6 +11,7 @@
 
 using namespace std;
 
+int gaf;
 int gMap[MAP_SIZE][MAP_SIZE];
 int PlayerX = 1,
     PlayerY = 1;
