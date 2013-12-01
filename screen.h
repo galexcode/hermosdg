@@ -12,6 +12,7 @@ using namespace std;
 void RenderG(int gMap[][MAP_SIZE], int PlayerX, int PlayerY, struct Enemy ent[])
 {
     system("cls");
+    int entnr = 0;
     for (int i = 0; i < MAP_SIZE; i++)
     {
 
@@ -23,11 +24,10 @@ void RenderG(int gMap[][MAP_SIZE], int PlayerX, int PlayerY, struct Enemy ent[])
                 continue;
             }
             else
-            for (int k = 0; k <ENEMY_NR; k++)
-            {
-                if ( i == ent[i].eYpos && j == ent[i].eXpos);
-                    //cout << '$';
-            }
+            if ( i == entity[entnr].eYpos && j == entity[entnr].eXpos)
+                cout << "E";
+            else
+
             if ( i == MAP_SIZE-2 && j == MAP_SIZE-2 )
                 cout << (char) 178;
             else
@@ -48,9 +48,6 @@ void RenderG(int gMap[][MAP_SIZE], int PlayerX, int PlayerY, struct Enemy ent[])
             case POINTS_ENT:
                 cout << "p";
                 break;
-
-            case ENEMY:
-                cout << '$';
 
             }
         }

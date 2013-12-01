@@ -32,6 +32,7 @@ bool ReturnToExit(int gMap[][MAP_SIZE], int x, int y)
 
 void smoothMap(int gMap[][MAP_SIZE])
 {
+    int i = 0;
     for (int y = 1; y < MAP_SIZE-1; y++)
         for (int x = 1; x < MAP_SIZE-1; x++)
         {
@@ -49,6 +50,35 @@ void smoothMap(int gMap[][MAP_SIZE])
                  gMap[y][x-1] == WALL     &&
                  gMap[y+1][x] == WALL     &&
                  gMap[y][x+1] == WALL       ) gMap[y][x] = WALL;
+
+            if ( gMap[y][x] == FLOOR &&
+                 gMap[y][x-1] == WALL &&
+                 gMap[y][x+1] == WALL &&
+                 gMap[y-1][x] == WALL &&
+                 gMap[y+1][x] == FLOOR &&
+                 gMap[y+1][x-1] == WALL &&
+                 gMap[y+1][x+1] == WALL &&
+                 gMap[y+2][x]   == WALL  ) gMap[y][x] = WALL;
+            else
+            if ( gMap[y][x] == FLOOR &&
+                 gMap[y][x-1] == WALL &&
+                 gMap[y-1][x] == WALL &&
+                 gMap[y+1][x] == WALL &&
+                 gMap[y][x+1] == FLOOR &&
+                 gMap[y-1][x+1] == WALL &&
+                 gMap[y+1][x+1] == WALL &&
+                 gMap[y][x+2] == WALL    ) gMap[y][x] = WALL;
+            else
+            if (gMap[y][x] == FLOOR && rand() % 15 == 0) gMap[y][x] = POINTS_ENT;
+            else
+            if (gMap[y][x] == FLOOR && rand() % 25 == 0)
+            {
+                entity[i].eXpos = x;
+                entity[i].eYpos = y;
+                entity[i].eMovD = rand() % 4;
+                i++;
+            }
+
         }
 }
 
@@ -64,15 +94,19 @@ void CreatePath(int gMap[][MAP_SIZE])
         else y++;
         if (x > 2 && y > 2 && rand() % 10 == 0)
         {
-            gMap[y][x] = DOOR;
-            if (gMap[y][x-1] == FLOOR) gMap[y][x-1] = KEY;
-            else
+            //gMap[y][x] = DOOR;
+            if (gMap[y][x] == FLOOR && gMap[y][x-1] == FLOOR)
+            {
+                gMap[y][x] = DOOR;
+                gMap[y][x-1] = KEY;
+            }
+            //else
             if (gMap[y-1][x] == FLOOR) gMap[y-1][x] = KEY;
-            else
+            //else
             if (gMap[y+1][x] == FLOOR) gMap[y+1][x] = KEY;
         }
-        else
-        if (rand() % 15 == 0)
+       // else
+        if (rand() % 10 == 0)
         {
             gMap[y][x] = POINTS_ENT;
         }
@@ -98,11 +132,7 @@ void GenerateMap(int gMap[][MAP_SIZE], int gentype, int* PlayerX, int* PlayerY)
         {
             if (rand() % gentype == 1)
                 gMap[i][j] = FLOOR;//rand() % 2;
-            else
-            if (rand() % 20 == 0)
-            {
-                gMap[i][j] = POINTS_ENT;
-            }
+
         }
     gMap[*PlayerY][*PlayerX] = FLOOR;
 }

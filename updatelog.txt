@@ -31,7 +31,7 @@
 ~version 0.1.0 alpha
 ///
     added import support for custom maps ("custom")
-    added enemies
+    added enemies (unfunct)
     edded enemies AI (unfunct)
 
     patch 0.1.1a alpha:
@@ -52,6 +52,14 @@
     added smoothMap function
 
 ---
+
+~version 0.1.4 alpha
+///
+    fixed enemies
+    fixed enemy movement
+
+---
+
 
 TODO:
 fix door/ key bugs (not appearing in pair everytime)

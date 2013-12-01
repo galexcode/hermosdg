@@ -39,6 +39,9 @@
 		<Unit filename="map1.txt" />
 		<Unit filename="playeraction.h" />
 		<Unit filename="screen.h" />
+		<Unit filename="updatelog.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -29,7 +29,7 @@ int movePlayer(int gMap[][MAP_SIZE], int* PlayerX, int* PlayerY, int* pl_points)
     //cout << (int)'w' << " " << (int)'a' << " " << (int)'s' << " " << (int)'d';
     cin >> input;
 
-    if ( input == 'q') return 0;
+    if ( input == 'q') return QUIT_GAME;
 
     switch ((int)input)
     {
@@ -81,11 +81,17 @@ int movePlayer(int gMap[][MAP_SIZE], int* PlayerX, int* PlayerY, int* pl_points)
         *pl_points = *pl_points +1;
     }
 
+    for (int ennr = 0; ennr < ENEMY_NR; ennr++)
+    {
+        if (*PlayerX == entity[ennr].eXpos && *PlayerY == entity[ennr].eYpos)
+            return DEAD_GAME;
+    }
+
     if ( input == 'r' || (*PlayerX == MAP_SIZE-2 && *PlayerY == MAP_SIZE-2))
     {
         Sleep(100);
-        return 2;
+        return RELOAD_GAME;
     }
-    return 1;
+    return CONT_GAME;
 }
 

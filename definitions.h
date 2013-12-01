@@ -1,14 +1,15 @@
 /**************************************
+
   * Dungeon game
   *
   *
-  * version 0.1.3 alpha
+  * version 0.1.4 alpha
 ***************************************/
 
 #ifndef DEFINITIONS_H_INCLUDED
 #define DEFINITIONS_H_INCLUDED
 
-#define MAP_SIZE      40
+#define MAP_SIZE      20
 #define ENEMY_NR       3
 #define FLOOR          0
 #define WALL           1
@@ -30,12 +31,17 @@
 #define MOVE_RIGHT     2
 #define MOVE_LEFT      3
 
+#define QUIT_GAME      0
+#define CONT_GAME      1
+#define RELOAD_GAME    2
+#define DEAD_GAME      3
+
 struct Enemy
 {
     int eXpos; /// enemy X position
-    int eYpos; /// enemy Y position
     int eMovD; /// enemy Movement direction
-};
+    int eYpos; /// enemy Y position
+} entity[ENEMY_NR];
 
 int pl_points;
 
